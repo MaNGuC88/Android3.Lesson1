@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/filmsFragment">
+
+    <fragment
+        android:id="@+id/filmsFragment"
+        android:name="com.example.lesson1.ui.film_list.FilmsFragment"
+        android:label="Films"
+        tools:layout="@layout/fragment_films" />
+    <fragment
+        android:id="@+id/filmDetailFragment"
+        android:name="com.example.lesson1.ui.film_detail.FilmDetailFragment"
+        android:label="Film Details."
+        tools:layout="@layout/fragment_film_detail" />
+</navigation>

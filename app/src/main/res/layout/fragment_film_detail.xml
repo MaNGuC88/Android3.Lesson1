@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".ui.film_detail.FilmDetailFragment">
+
+    <TextView
+        android:id="@+id/TitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        android:textSize="20sp"
+        tools:text="Film Title" />
+
+    <TextView
+        android:id="@+id/OriginalTitleTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Film Original Title" />
+
+    <TextView
+        android:id="@+id/DirectorTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Film Director" />
+
+    <TextView
+        android:id="@+id/ProducerTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Film Producer" />
+
+    <TextView
+        android:id="@+id/ReleaseDateTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Release Date" />
+
+    <TextView
+        android:id="@+id/RunningTimeTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Running Time" />
+
+    <TextView
+        android:id="@+id/DescriptionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:textSize="16sp"
+        tools:text="Description" />
+
+</LinearLayout>
