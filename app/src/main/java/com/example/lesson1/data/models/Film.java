@@ -19,8 +19,12 @@ public class Film implements Serializable {
     private String releaseDate;
     @SerializedName("running_time")
     private String runningTime;
+    @SerializedName("image")
+    private String imageUrl;
 
-    public Film(String id, String title, String originalTitle, String description, List<String> people, String director, String producer, String releaseDate, String runningTime) {
+    public Film(String id, String title, String originalTitle, String description,
+                List<String> people, String director, String producer, String releaseDate,
+                String runningTime, String imageUrl) {
         this.id = id;
         this.title = title;
         this.originalTitle = originalTitle;
@@ -30,6 +34,7 @@ public class Film implements Serializable {
         this.producer = producer;
         this.releaseDate = releaseDate;
         this.runningTime = runningTime;
+        this.imageUrl = imageUrl;
     }
 
     public String getId() {
@@ -102,5 +107,13 @@ public class Film implements Serializable {
 
     public void setRunningTime(String runningTime) {
         this.runningTime = runningTime;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

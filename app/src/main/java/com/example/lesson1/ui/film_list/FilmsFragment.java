@@ -45,13 +45,13 @@ public class FilmsFragment extends Fragment {
             public void onItemClick(int position) {
                 Film film = adapter.getItem(position);
                 if (film != null) {
-                    openFilmsDetailFragment(film);
+                    openFilmsDetailsFragment(film);
                 }
             }
         });
     }
 
-    private void openFilmsDetailFragment(Film film) {
+    private void openFilmsDetailsFragment(Film film) {
         Bundle bundle = new Bundle();
         bundle.putSerializable("film", film);
         NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment);
@@ -61,7 +61,6 @@ public class FilmsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         binding = FragmentFilmsBinding.inflate(inflater, container, false);
         return binding.getRoot();
     }

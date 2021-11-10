@@ -14,7 +14,7 @@ import com.example.lesson1.databinding.ItemFilmBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHolder>{
+public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHolder> {
 
     private List<Film> films = new ArrayList<>();
     private OnItemClickListener onItemClickListener;
@@ -53,6 +53,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.FilmsViewHol
     public class FilmsViewHolder extends RecyclerView.ViewHolder {
 
         private ItemFilmBinding binding;
+
         public FilmsViewHolder(@NonNull ItemFilmBinding binding) {
             super(binding.getRoot());
             this.binding = binding;

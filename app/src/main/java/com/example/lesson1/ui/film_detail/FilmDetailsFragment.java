@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
 import com.example.lesson1.App;
 import com.example.lesson1.R;
 import com.example.lesson1.data.models.Film;
@@ -22,12 +23,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class FilmDetailFragment extends Fragment {
+public class FilmDetailsFragment extends Fragment {
 
     public FragmentFilmDetailBinding binding;
     private Film film;
 
-    public FilmDetailFragment() {
+    public FilmDetailsFragment() {
         // Required empty public constructor
     }
 
@@ -47,13 +48,17 @@ public class FilmDetailFragment extends Fragment {
             @Override
             public void onResponse(Call<Film> call, Response<Film> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                binding.TitleTv.setText("Title: " + film.getTitle());
-                binding.OriginalTitleTv.setText("Original title: " + film.getOriginalTitle());
-                binding.DirectorTv.setText("Director: " + film.getDirector());
-                binding.ProducerTv.setText("Producer: " + film.getProducer());
-                binding.ReleaseDateTv.setText("Release date: " + film.getReleaseDate());
-                binding.RunningTimeTv.setText("Running time: " + film.getRunningTime());
-                binding.DescriptionTv.setText("Description: " + film.getDescription());
+                    binding.TitleTv.setText("Title: " + film.getTitle());
+                    binding.OriginalTitleTv.setText("Original title: " + film.getOriginalTitle());
+                    binding.DirectorTv.setText("Director: " + film.getDirector());
+                    binding.ProducerTv.setText("Producer: " + film.getProducer());
+                    binding.ReleaseDateTv.setText("Release date: " + film.getReleaseDate());
+                    binding.RunningTimeTv.setText("Running time: " + film.getRunningTime());
+                    binding.DescriptionTv.setText("Description: " + film.getDescription());
+                    Glide.with(binding.movieImage.getContext())
+                            .load(film.getImageUrl())
+//                            .circleCrop()
+                            .into(binding.movieImage);
                 } else {
                     Log.e("TAG", "onFailure" + response.errorBody().toString());
                 }

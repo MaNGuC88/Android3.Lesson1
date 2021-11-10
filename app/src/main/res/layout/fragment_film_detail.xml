@@ -5,24 +5,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ui.film_detail.FilmDetailFragment">
+    tools:context=".ui.film_detail.FilmDetailsFragment">
+
+    <ImageView
+        android:id="@+id/movieImage"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        tools:src="@drawable/ic_launcher_background" />
 
     <TextView
         android:id="@+id/TitleTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:layout_margin="16dp"
         android:textSize="20sp"
+        android:textStyle="bold"
         tools:text="Film Title" />
 
     <TextView
         android:id="@+id/OriginalTitleTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Film Original Title" />
 
@@ -30,8 +37,8 @@
         android:id="@+id/DirectorTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Film Director" />
 
@@ -39,8 +46,8 @@
         android:id="@+id/ProducerTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Film Producer" />
 
@@ -48,8 +55,8 @@
         android:id="@+id/ReleaseDateTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Release Date" />
 
@@ -57,8 +64,8 @@
         android:id="@+id/RunningTimeTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Running Time" />
 
@@ -66,8 +73,8 @@
         android:id="@+id/DescriptionTv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:layout_margin="16dp"
         android:textSize="16sp"
         tools:text="Description" />
 
