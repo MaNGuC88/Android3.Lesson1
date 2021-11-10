@@ -13,10 +13,8 @@ import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
 import com.example.lesson1.App;
-import com.example.lesson1.R;
 import com.example.lesson1.data.models.Film;
 import com.example.lesson1.databinding.FragmentFilmDetailBinding;
-import com.example.lesson1.databinding.FragmentFilmsBinding;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -29,11 +27,10 @@ public class FilmDetailsFragment extends Fragment {
     private Film film;
 
     public FilmDetailsFragment() {
-        // Required empty public constructor
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentFilmDetailBinding.inflate(inflater, container, false);
         return binding.getRoot();
@@ -46,15 +43,15 @@ public class FilmDetailsFragment extends Fragment {
 
         App.api.getFilm(film.getId()).enqueue(new Callback<Film>() {
             @Override
-            public void onResponse(Call<Film> call, Response<Film> response) {
+            public void onResponse(@NonNull Call<Film> call, @NonNull Response<Film> response) {
                 if (response.isSuccessful() && response.body() != null) {
-                    binding.TitleTv.setText("Title: " + film.getTitle());
-                    binding.OriginalTitleTv.setText("Original title: " + film.getOriginalTitle());
-                    binding.DirectorTv.setText("Director: " + film.getDirector());
-                    binding.ProducerTv.setText("Producer: " + film.getProducer());
-                    binding.ReleaseDateTv.setText("Release date: " + film.getReleaseDate());
-                    binding.RunningTimeTv.setText("Running time: " + film.getRunningTime());
-                    binding.DescriptionTv.setText("Description: " + film.getDescription());
+                    binding.TitleTv.setText(String.format("Title: %s", film.getTitle()));
+                    binding.OriginalTitleTv.setText(String.format("Original title: %s", film.getOriginalTitle()));
+                    binding.DirectorTv.setText(String.format("Director: %s", film.getDirector()));
+                    binding.ProducerTv.setText(String.format("Producer: %s", film.getProducer()));
+                    binding.ReleaseDateTv.setText(String.format("Release date: %s", film.getReleaseDate()));
+                    binding.RunningTimeTv.setText(String.format("Running time: %s", film.getRunningTime()));
+                    binding.DescriptionTv.setText(String.format("Description: %s", film.getDescription()));
                     Glide.with(binding.movieImage.getContext())
                             .load(film.getImageUrl())
 //                            .circleCrop()
@@ -65,7 +62,7 @@ public class FilmDetailsFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<Film> call, Throwable t) {
+            public void onFailure(@NonNull Call<Film> call, @NonNull Throwable t) {
                 Log.e("TAG", "onFailure" + t.getLocalizedMessage());
             }
         });
